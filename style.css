@@ -9,7 +9,7 @@ body {
   justify-content: start;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  /* height: 100vh; */
   color: aliceblue;
   background: black;
   /* background: linear-gradient(to left, teal, chocolate); */
@@ -37,7 +37,9 @@ p {
   border: 1px solid black;
   border: 2px solid aliceblue;
   width: 80vw;
-  height: 60vh;
+  min-height: 70vh;
+  max-height: fit-content;
+
   color: aliceblue;
   display: flex;
   justify-content: center;
@@ -71,7 +73,7 @@ p {
   right: -100px;
   bottom: -100px;
 }
-@media (max-width: 450px) {
+@media (max-width: 750px) {
   .b1 {
     top: -150px;
     right: -100px;
@@ -90,7 +92,7 @@ p {
   }
   .quote,
   .author {
-    font-size: clamp(2vw, 16px, 5vw);
+    font-size: clamp(1vw, 14px, 3vw);
   }
 }
 .btn {
