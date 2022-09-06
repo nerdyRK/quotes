@@ -1,0 +1,54 @@
+let quote = document.querySelector(".quote");
+let author = document.querySelector(".author");
+let btn = document.querySelector(".btn");
+let list = document.querySelector(".list");
+
+let url = "https://api.quotable.io/random";
+
+btn.addEventListener("click", generate);
+
+async function generate() {
+  let res = await fetch(url);
+  let data = await res.json();
+  //   console.log(data);
+  fillText(data);
+}
+// https://quotable.io/random?author=buddha
+
+async function getAuthors() {
+  let authors = await fetch("https://quotable.io/authors?limit=150");
+  authors = await authors.json();
+  console.log(authors.results);
+  makeList(authors.results);
+}
+
+getAuthors();
+
+function makeList(authors) {
+  list.innerHTML = ` <option>Select Author</option>
+  <option>RANDOM Author</option>
+  ${authors.map((author) => {
+    if (author.quoteCount != 0) {
+      return `<option>${author.name}</option>`;
+    }
+  })}`;
+}
+
+function fillText(data) {
+  quote.textContent = data.content;
+  author.textContent = "✒📜" + data.author;
+}
+
+list.addEventListener("change", changeUrl);
+
+function changeUrl(e) {
+  let name = e.target.value;
+  if (name == "RANDOM Author") {
+    url = "https://api.quotable.io/random";
+  } else if (name == "Select Author") {
+    url = "https://api.quotable.io/random";
+  } else {
+    url = `https://api.quotable.io/random?author=${name}`;
+  }
+  generate();
+}
