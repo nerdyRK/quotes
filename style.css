@@ -92,8 +92,10 @@ p {
   }
   .quote,
   .author {
-    font-size: clamp(1vw, 14px, 3vw);
+    font-size: clamp(2vw, 18px, 3vw);
   }
+.box{
+Width:90vw;}
 }
 .btn {
   position: absolute;
