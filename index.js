@@ -2,6 +2,7 @@ let quote = document.querySelector(".quote");
 let author = document.querySelector(".author");
 let btn = document.querySelector(".btn");
 let list = document.querySelector(".list");
+let count = document.querySelector(".count");
 
 let url = "https://api.quotable.io/random";
 
@@ -49,6 +50,13 @@ function changeUrl(e) {
     url = "https://api.quotable.io/random";
   } else {
     url = `https://api.quotable.io/random?author=${name}`;
+    countQ(e.target.value);
   }
   generate();
+}
+async function countQ(name) {
+  let res = await fetch(`https://quotable.io/authors?name=${name}`);
+  let data = await res.json();
+  console.log(data.results[0].quoteCount);
+  count.innerHTML = `Total quotes : ${data.results[0].quoteCount}`;
 }

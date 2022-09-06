@@ -6,13 +6,31 @@
 body {
   display: flex;
   width: 100vw;
-  justify-content: space-evenly;
+  justify-content: start;
   align-items: center;
   flex-direction: column;
   height: 100vh;
   color: aliceblue;
   background: black;
   /* background: linear-gradient(to left, teal, chocolate); */
+}
+h1,
+select,
+p {
+  margin: 10px 0 20px 0;
+}
+p {
+  animation: scale 1s linear 3;
+}
+@keyframes scale {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 .box {
   border: 1px solid black;
