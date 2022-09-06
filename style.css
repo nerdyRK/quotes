@@ -37,7 +37,7 @@ p {
   border: 1px solid black;
   border: 2px solid aliceblue;
   width: 80vw;
-  min-height: 70vh;
+  min-height: 65vh;
   max-height: fit-content;
 
   color: aliceblue;
@@ -131,7 +131,7 @@ select {
 }
 h5 {
   position: absolute;
-  right: 5vw;
+  right: 7vw;
   bottom: 10vh;
   color: coral;
 }
