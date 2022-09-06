@@ -20,6 +20,7 @@ p {
   margin: 10px 0 20px 0;
 }
 p {
+  text-align: center;
   animation: scale 1s linear 3;
 }
 @keyframes scale {
@@ -87,6 +88,10 @@ p {
     right: -100px;
     bottom: -150px;
   }
+  .quote,
+  .author {
+    font-size: clamp(2vw, 16px, 5vw);
+  }
 }
 .btn {
   position: absolute;
@@ -116,6 +121,13 @@ select {
   border-radius: 12px;
   margin: 0 20vw 5vh;
   padding: 4px;
+
   border: 2px solid chocolate;
   outline: none;
+}
+h5 {
+  position: absolute;
+  right: 5vw;
+  bottom: 10vh;
+  color: coral;
 }

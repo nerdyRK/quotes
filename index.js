@@ -46,8 +46,10 @@ function changeUrl(e) {
   let name = e.target.value;
   if (name == "RANDOM Author") {
     url = "https://api.quotable.io/random";
+    count.innerHTML = "";
   } else if (name == "Select Author") {
     url = "https://api.quotable.io/random";
+    count.innerHTML = "";
   } else {
     url = `https://api.quotable.io/random?author=${name}`;
     countQ(e.target.value);
