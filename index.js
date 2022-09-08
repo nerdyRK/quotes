@@ -23,16 +23,12 @@ async function generate() {
   let data = await res.json();
   //   console.log(data);
   fillText(data);
-  if (count.innerHTML == "Total quotes : 1") {
-    btn.addEventListener("click", animate);
-  }
+//   if (count.innerHTML == "Total quotes : 1") {
+//     btn.addEventListener("click", animate);
+//   }
 }
 // https://quotable.io/random?author=buddha
-function animate() {
-  count.classList.add("animate");
-  setTimeout(() => {
-    count.classList.remove("animate");
-  }, 2000);
+
 }
 
 async function getAuthors() {
