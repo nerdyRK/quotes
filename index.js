@@ -26,7 +26,7 @@ async function generate() {
 //   if (count.innerHTML == "Total quotes : 1") {
 //     btn.addEventListener("click", animate);
 //   }
-}
+// }
 // https://quotable.io/random?author=buddha
 
 }
