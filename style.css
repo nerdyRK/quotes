@@ -136,8 +136,8 @@ select {
 }
 h5 {
   position: absolute;
-  right: 5vw;
-  bottom: 10vh;
+  left: 5vw;
+  bottom: 12vh;
   color: coral;
   filter: invert(2);
 }
