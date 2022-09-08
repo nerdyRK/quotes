@@ -5,7 +5,9 @@
 }
 body {
   display: flex;
+  /* filter: invert(5); */
   width: 100vw;
+  filter: hue-rotate(166deg);
   justify-content: start;
   align-items: center;
   flex-direction: column;
@@ -20,16 +22,18 @@ p {
   margin: 10px 0 20px 0;
 }
 p {
+  color: coral;
+  filter: invert(2);
   text-align: center;
-  animation: scale 1s linear 3;
+  animation: scale 0.7s linear alternate 5 forwards;
 }
 @keyframes scale {
   from {
-    transform: scale(0.8);
+    /* transform: scale(0.8); */
     opacity: 0;
   }
   to {
-    transform: scale(1);
+    /* transform: scale(1); */
     opacity: 1;
   }
 }
@@ -39,7 +43,6 @@ p {
   width: 80vw;
   min-height: 65vh;
   max-height: fit-content;
-
   color: aliceblue;
   display: flex;
   justify-content: center;
@@ -51,9 +54,10 @@ p {
   position: relative;
 }
 .boxes {
+  border: 1px solid rgb(151, 150, 150);
   position: absolute;
   width: 200px;
-  background-color: rgb(219, 119, 37);
+  background-color: orange;
   height: 200px;
   transform: rotate(45deg);
 }
@@ -94,8 +98,9 @@ p {
   .author {
     font-size: clamp(3vw, 22px, 5vw);
   }
-.box{
-Width:90vw;}
+  .box {
+    width: 90vw;
+  }
 }
 .btn {
   position: absolute;
@@ -131,7 +136,19 @@ select {
 }
 h5 {
   position: absolute;
-  right: 7vw;
-  bottom: 12vh;
+  right: 5vw;
+  bottom: 10vh;
   color: coral;
+  filter: invert(2);
+}
+.animate {
+  animation: shake 0.1s cubic-bezier(0.47, 0, 0.75, 0.72) alternate 5;
+}
+@keyframes shake {
+  from {
+    transform: translateX(-20px);
+  }
+  to {
+    transform: translateX(20px);
+  }
 }

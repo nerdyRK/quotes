@@ -6,6 +6,16 @@ let count = document.querySelector(".count");
 
 let url = "https://api.quotable.io/random";
 
+// let ff = [
+//   "cursive",
+//   "tahoma",
+//   "serif",
+//   "fantasy",
+//   "impact",
+//   "courier",
+//   "helvetica",
+// ];
+
 btn.addEventListener("click", generate);
 
 async function generate() {
@@ -13,13 +23,22 @@ async function generate() {
   let data = await res.json();
   //   console.log(data);
   fillText(data);
+  if (count.innerHTML == "Total quotes : 1") {
+    btn.addEventListener("click", animate);
+  }
 }
 // https://quotable.io/random?author=buddha
+function animate() {
+  count.classList.add("animate");
+  setTimeout(() => {
+    count.classList.remove("animate");
+  }, 2000);
+}
 
 async function getAuthors() {
   let authors = await fetch("https://quotable.io/authors?limit=150");
   authors = await authors.json();
-  console.log(authors.results);
+  // console.log(authors.results);
   makeList(authors.results);
 }
 
